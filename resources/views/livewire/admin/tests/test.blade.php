@@ -15,20 +15,36 @@ include_once 'test.php'; ?>
         </x-slot:actions>
     </x-header>
 
-    {{-- <img src="{{ asset('storage/imgs/test-tube-icon.svg') }}" alt="Description de l'image"> --}}
-    {{-- <img src="{{ asset('storage/photos/test-icon.svg') }}" alt="Description de l'image"> --}}
-
     <x-card separator class="mb-6 border-4 border-zinc-900">
 
         @foreach ($subjects as $subject)
 
-            <x-list-item :item="$subject" value="title" sub-value="description" actual="actual" proposed="proposeds">
+            <x-list-item :item="$subject" value="title">
                 <x-slot:avatar>
                     {{ Debugbar::info($subject) }}
                     <x-badge value="{{ ucfirst(strtolower($subject['state'])) }}"
                         class="text-black badge-{{ $subject['stateColor'] }}" />
                 </x-slot:avatar>
-                <x-slot:actions class="space-y-2 w-50% !text-left !justify-start">
+                <x-slot:sub-value class='truncable-none overflow-visible'>
+
+                    {{ $subject['description'] }}
+                    <hr class="my-3">
+                    <p class="text-lg font-bold">Situation actuelle :</p>
+                    <a href="{{ route($subject['actual'][1]) }}" class="link">
+                        {{ $subject['actual'][0] }}
+                    </a>
+                    <p class="text-lg font-bold mt-3">Situation proposée :</p>
+                    @foreach($subject['proposed'] as $proposed)
+                        <p class="link my-1">
+                            <a href="{{ route($proposed[1]) }}">
+                                {{  $proposed[0] }}
+                            </a>
+                        </p>
+
+                    @endforeach
+
+                </x-slot:sub-value>
+                {{-- <x-slot:actions class="space-y-2 w-50% !text-left !justify-start">
                     <div class="space-y-2 w-50% !text-left !justify-start">
                         <ul class="space-y-2 w-50% !text-left !justify-start">Situation actuelle :</ul>
 
@@ -42,7 +58,7 @@ include_once 'test.php'; ?>
                         </li>
 
                     </div>
-                </x-slot:actions>
+                </x-slot:actions> --}}
             </x-list-item>
 
         @endforeach

@@ -62,7 +62,7 @@ new #[Layout('components.layouts.admin')] class extends Component {
 		if ($lastPg < $currPg) {
 			Debugbar::addMessage('yes');
 			$items->needRefresh = true;
-			redirect()->route('admin.test', ['page' => $lastPg, 'search' => $this->search]);
+			redirect()->route('tableFilter.soluce1', ['page' => $lastPg, 'search' => $this->search]);
 		}
 		// Debugbar::addMessage($items);
 

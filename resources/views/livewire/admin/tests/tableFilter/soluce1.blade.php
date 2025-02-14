@@ -1,5 +1,5 @@
 <?php
-include_once 'test.php'; ?>
+include_once 'soluce1.php'; ?>
 
 @section('title', __('Test'))
 <div class="container mx-auto">

@@ -52,9 +52,9 @@ class extends Component {
 			[
 				'state'       => 'Ouvert',
 				'title'       => 'Problème de liste après filtrages',
-				'description' => 'tatati',
-				'actual'      => 'Avec le problème de resultats pas visibles',
-				'proposeds'    => [
+				'description' => 'Tatati...',
+				'actual'      => ['Avec le problème de resultats pas visibles','tableFilter.trouble'],
+				'proposed'    => [
 					['Avec raffraichissement n°1 (Non adoptable)', 'tableFilter.soluce1'],
 					['Soluce n°2 (À trouver !!!)', 'tableFilter.soluce2'],
 				],
