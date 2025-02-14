@@ -63,9 +63,10 @@ Route::middleware('auth')->group(function () {
 	});
 
 	Route::middleware(IsAdmin::class)->group(function () {
-		Volt::route('/t', 'admin.tests.test')->name('admin.test');
-		Volt::route('/table-filter/trouble', 'admin.tests.tableFilter.trouble')->name('tableFilter.trouble');
-		Volt::route('/table-filter/soluce1', 'admin.tests.tableFilter.soluce1')->name('tableFilter.soluce1');
-		Volt::route('/table-filter/soluce2', 'admin.tests.tableFilter.soluce2')->name('tableFilter.soluce2');
+		Volt::route('/t', 'admin.tests.tests')->name('admin.tests');
+        // 2do factorise routes
+		Volt::route('/t/table-filter/trouble', 'admin.tests.tableFilter.trouble')->name('t.tableFilter.trouble');
+		Volt::route('/t/table-filter/soluce1', 'admin.tests.tableFilter.soluce1')->name('t.tableFilter.soluce1');
+		Volt::route('/t/table-filter/soluce2', 'admin.tests.tableFilter.soluce2')->name('t.tableFilter.soluce2');
 	});
 });

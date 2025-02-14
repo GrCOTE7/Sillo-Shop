@@ -57,8 +57,8 @@ new class extends Component {
         </x-menu-item>
         <x-menu-separator />
         <x-menu-item class="text-right mr-3">
-            <a href="{{ route('admin.test') }}" title=" {{ __('Test page') }} ">
-                <x-icon name="c-cog" /> Page de test
+            <a href="{{ route('admin.tests') }}" title=" {{ __('Tests page') }} ">
+                {{-- <x-icon name="c-cog" /> Page de test --}}
                 <x-icon-tube height="24" width="24" />
             </a>
         </x-menu-item>

@@ -15,6 +15,9 @@ include_once 'trouble.php'; ?>
 		</x-slot:actions>
 	</x-header>
 
+	@include('livewire.admin.tests.tableFilter.submenu')
+
+
 	<div
 		class="mt-4 !px-24 ml-12">
 		@if ($items->count())
